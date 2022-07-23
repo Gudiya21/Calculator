@@ -1,0 +1,136 @@
+<html>
+<head>
+	<script>
+
+		function dis(val)
+		{
+			document.getElementById("result").value+=val
+		}
+        function solve()
+		{
+		try{
+			let x = document.getElementById("result").value
+			let y = eval(x)
+			document.getElementById("result").value = y
+		}
+		catch {
+			document.getElementById("result").value="Error"
+		}
+	}
+		function clr()
+		{
+			document.getElementById("result").value = ""
+		}
+		function del(){
+			var exp=document.getElementById("result").value
+			document.getElementById("result").value=exp.substring(0,exp.length-1);
+		}
+	</script>
+	<!-- for styling -->
+	<style>
+        .buttonminus,.buttonplus,.buttonequal,.buttonhyphen,.buttonem{
+            background-color: #e9a960;
+        }
+		.button1,.button3,.button5,.button7,.button9,.buttonzero{
+			background-color: rgb(213, 223, 213);
+		}
+		.button2,.button6,.button4,.button8{
+			background-color: rgb(225, 235, 227);
+		}
+		
+		.title{
+		margin-bottom: 5px;
+        background-color: rgb(167, 221, 240);
+		text-align:center;
+		width: 390px;
+		color:rgb(9, 20, 9);
+		border: solid black 5px;
+		}
+		input:hover{
+			background-color: aquamarine;
+		}
+		input[type="button"]
+		{
+		color: black;
+        font-size: 25px;
+		border: solid black 5px;
+		width:100%;
+        height:100px;
+		}
+		input[type="text"]
+		{
+        color: rgb(19, 18, 18);
+		/* border-color: black; */
+		background-color:rgb(250, 229, 229);
+		border: solid rgb(10, 10, 10) 5px;
+		width:100%;
+        height: 90px;
+		font-size: 30px;
+		}
+        .box{
+            width: 400px;
+            height: 400px;
+        }
+		#bg{
+			background: linear-gradient(to right,pink ,rgb(205, 240, 234),rgb(204, 247, 204),#CBCE91FF,rgb(226, 206, 169), rgb(192, 247, 192),rgb(201, 223, 233),rgb(231, 132, 153));
+
+		}
+		.clear{
+			background-color: rgb(43, 214, 143);
+			border-color: #b0353a;
+			color: #fff;
+
+
+		}
+		.button{
+			background-color: rgb(224, 204, 166);
+			border-radius: 3px;
+			border: 1px solid #c59a9a;
+			background-color: transparent;
+			background-image: linear-gradient(to bottom, transparent, transparent 50%, rgba(0,0,0,.04));
+			box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), inset 0 1px 0 0 rgba(255,255,255,.45), inset 0 -1px 0 0 rgba(255,255,255,.15), 0 1px 0 0 rgba(255,255,255,.15);
+			text-shadow: 0 1px rgba(255,255,255,.4);
+		}
+	</style>
+</head>
+<!-- create table -->
+<body id="bg">
+    <center>
+	<div class = title ><b><h1>Calculator</h1></b></div>
+	<table class="box" border="1">
+		<tr class="b">
+			<td colspan="3"><input type="text" id="result"/></td>
+			<!-- clr() function will call clr to clear all value -->
+			<td><input type="button" value="Clear" class="clear" onclick="clr()"/> </td>
+		</tr>
+		<tr>
+			<!-- create button and assign value to each button -->
+			<!-- dis("1") will call function dis to display value -->
+			<td><input type="button" value="1" class="button1" onclick="dis('1')"/> </td>
+			<td><input type="button" value="2" class="button2" onclick="dis('2')"/> </td>
+			<td><input type="button" value="3" class="button3" onclick="dis('3')"/> </td>
+			<td><input type="button" value="/" class="buttonhyphen" onclick="dis('/')"/> </td>
+        </tr>
+		<tr>
+			<td><input type="button" value="4" class="button4" onclick="dis('4')"/> </td>
+			<td><input type="button" value="5" class="button5" onclick="dis('5')"/> </td>
+			<td><input type="button" value="6" class="button6" onclick="dis('6')"/> </td>
+			<td><input type="button" value="-" class="buttonminus" onclick="dis('-')"/> </td>
+		</tr>
+		<tr>
+			<td><input type="button" value="7" class="button7" onclick="dis('7')"/> </td>
+			<td><input type="button" value="8" class="button8" onclick="dis('8')"/> </td>
+			<td><input type="button" value="9" class="button9" onclick="dis('9')"/> </td>
+			<td><input type="button" value="+" class="buttonplus" onclick="dis('+')"/> </td>
+		</tr>
+		<tr>
+			<td><input type="button" value="." class="buttondot" onclick="dis('.')"/> </td>
+			<td><input type="button" value="0" class="buttonzero" onclick="dis('0')"/> </td>
+			<td><input type="button" value="=" class="buttonequal" onclick="solve()"/> </td>
+			<td><input type="button" value="AC" class="buttonem" onclick="del()"/> </td>
+
+		</tr>
+	</table>
+</center>
+</body>
+</html>
